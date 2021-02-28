@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss-cli@latest build ./public/styles.css -o ./public/src/tailwind.css",
+    "build": "npx tailwindcss-cli@latest build ./public/styles.css -o ./public/src/tailwind.css; node app.js",
     "dev":"nodemon app"
   },
   "keywords": [],
