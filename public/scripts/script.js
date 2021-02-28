@@ -1,6 +1,16 @@
 // const {
 //     default: axios
 // } = require("axios");
+function redirect() {
+    if (window.location.href != '/dashboard') {
+        window.location.href = '/dashboard';
+        document.querySelector('body')[0].removeAttribute('onload');
+        alert("test")
+    } else {
+        document.querySelector('body')[0].removeAttribute('onload');
+        alert("TEST")
+    }
+}
 
 function roundPrice(price, place) {
     /**
