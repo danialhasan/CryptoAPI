@@ -10,7 +10,14 @@ const TEST_ENV_MAP = 'https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/ma
 const ENV = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest';
 const ENV_MAP = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/map';
 const API_KEY = process.env.API_KEY;
-
+//Declaring the following variables lets us switch from 
+//production to sandbox API keys and URLs with just one
+//changed line. To toggle between production mode
+//and sandbox mode, add/remove 'TEST_' from the beginning
+//of each value below. 
+var productionENV = TEST_ENV;
+var productionENV_MAP = TEST_ENV_MAP;
+var productionKey = TEST_API_KEY;
 router.use((req, res, next) => {
 
     res.setHeader("Access-Control-Allow-Origin", '*');
@@ -26,15 +33,14 @@ router.use((req, res, next) => {
 
 })
 router.get('/', (req, res) => {
-    console.log(`test API key: ${TEST_API_KEY}`);
     res.render('dashboard', {
         title: "CryptoAPI"
     })
 })
-router.get('/map', (req, res) => { //sandbox env
-    axios.get(TEST_ENV_MAP, {
+router.get('/map', (req, res) => {
+    axios.get(productionENV_MAP, {
             headers: {
-                'X-CMC_PRO_API_KEY': TEST_API_KEY
+                'X-CMC_PRO_API_KEY': productionKey
             },
             params: {
                 sort: 'id'
@@ -62,9 +68,9 @@ router.get('/api', (req, res) => {
 
     console.log(`User requested: ${cmcID}`);
 
-    axios.get(TEST_ENV, {
+    axios.get(productionENV, {
             headers: {
-                'X-CMC_PRO_API_KEY': TEST_API_KEY
+                'X-CMC_PRO_API_KEY': productionKey
             },
             params: {
                 id: cmcID
@@ -72,10 +78,10 @@ router.get('/api', (req, res) => {
         })
         .then(response => {
             res.send(response.data.data);
-            console.log('test API data sent to client')
+            console.log('API data sent to client.')
         })
         .catch(err => {
-            console.log(`Error ${err.response.data.statusCode}`);
+            console.log(`Error ${err}`);
             res.send(`Error ${err.response.data.statusCode}, ${err}`)
         })
 })

@@ -6,6 +6,9 @@
         <option value="Bitcoin">Bitcoin</option>
         <option value="Ethereum">Ethereum</option>
         <option value="Dogecoin">Dogecoin</option>
+        <option value="Carboncoin">Carboncoin</option>
+        <!-- <option value="Litecoin Plus">Litecoin Plus</option> -->
+        <!-- NOTE: Coins with special characters (spaces) don't work yet.  -->
     </select>
 </div>
 <div class="mx-auto text-center w-full h-auto flex flex-col">
@@ -14,7 +17,7 @@
 </div>
 
 <template id="cryptoTemplate">
-    <div class="mx-auto mt-8 bg-gray-700 flex flex-col w-60 h-32 text-white">
+    <div class="mx-auto bg-gray-700 flex flex-col m-3 md:my-6 md:mx-1 w-60 h-32 text-white">
         <div id="cryptoOptionElement" class="w-full h-1/2 text-2xl flex items-center justify-between px-4">
             <div>
                 [Bitcoin]
@@ -26,4 +29,5 @@
         </div>
     </div>
 </template>
-<div id="cryptoPrices"></div>
+<div id="cryptoPrices" class="mt-8 w-full h-auto flex flex-wrap">
+</div>

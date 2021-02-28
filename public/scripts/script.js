@@ -120,7 +120,7 @@ function runAPI(id) {
             cryptoPrice = roundPrice(cryptoInfoObject.quote.USD.price, 3);
             cryptoName = cryptoInfoObject.name;
             cryptoRateOfChange = cryptoInfoObject.quote.USD.percent_change_24h; //24h rateofchange
-            console.log(cryptoRateOfChange);
+            console.log(`Rate of Change (last 24h): ${cryptoRateOfChange}`);
             /**
              * When you get a response, check the crytoOption. 
              * If any IDs on the dom match `cryptoOption+Container`, don't clone

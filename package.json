@@ -2,10 +2,11 @@
   "name": "CryptoAPI",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "build": "npx tailwindcss-cli@latest build ./public/styles.css -o ./public/src/tailwind.css; node app.js",
-    "dev":"nodemon app"
+    "start": "node app.js",
+    "build": "npx tailwindcss-cli@latest build ./public/styles.css -o ./public/src/tailwind.css;",
+    "dev": "nodemon app"
   },
   "keywords": [],
   "author": "",
