@@ -26,8 +26,6 @@ app.set('view engine', 'ejs');
 app.set('views', viewsPath)
 app.set('layout', '../views/layout')
 
-const BASE_URL = 'https://jsonplaceholder.typicode.com';
-
 //routes 
 app.use(function (req, res, next) {
     res.setHeader("Access-Control-Allow-Origin", '*');
