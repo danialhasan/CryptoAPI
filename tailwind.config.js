@@ -1,8 +1,8 @@
 module.exports = {
   purge: [
     // '/views/404.ejs',
-    // '/views/dashboard.ejs',
-    // '/views/index.ejs',
+    '/dashboard.ejs',
+    '/index.ejs',
     // '/views/layout.ejs',
     // '/views/users.ejs',
   ],
