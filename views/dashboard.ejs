@@ -1,0 +1,29 @@
+<div class="text-center mx-auto pt-12">
+    <label for="selectCryptoElement" class="text-white">
+        Choose your crypto
+    </label>
+    <select name="selectCryptoElement" id="selectCrypto">
+        <option value="Bitcoin">Bitcoin</option>
+        <option value="Ethereum">Ethereum</option>
+        <option value="Dogecoin">Dogecoin</option>
+    </select>
+</div>
+<div class="mx-auto text-center w-full h-auto flex flex-col">
+    <button onclick="runMapAPI()" class="mx-auto text-center px-12 py-4 mt-24 rounded-full bg-indigo-500 text-white">Run
+        API</button>
+</div>
+
+<template id="cryptoTemplate">
+    <div class="mx-auto mt-8 bg-gray-700 flex flex-col w-60 h-32 text-white">
+        <div id="cryptoOptionElement" class="w-full h-1/2 text-2xl flex items-center justify-between px-4">
+            <div>
+                [Bitcoin]
+            </div>
+            <div class="w-16 h-8 flex justify-center items-center text-base bg-green-500">+2.1%</div>
+        </div>
+        <div id="cryptoValueElement" class="w-full h-1/2 text-4xl flex items-center justify-center">
+            [$46,690.09]
+        </div>
+    </div>
+</template>
+<div id="cryptoPrices"></div>

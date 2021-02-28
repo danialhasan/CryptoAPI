@@ -1,0 +1,47 @@
+@tailwind base;
+
+@layer utilities {
+    .dev {
+        @apply border-red-500 border-2 border-solid
+    }
+
+    .devBg {
+        @apply bg-red-700
+    }
+
+    .playBtnAnimate {
+        animation: playButtonBackground 1.5s normal infinite ease-in;
+    }
+
+    .playBtnDontAnimate {
+        animation: playButton 1s normal infinite ease-in;
+    }
+
+    @keyframes playButtonBackground {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(1.5);
+            opacity: 0;
+        }
+    }
+
+    @keyframes playButton {
+        0% {
+            transform: scale(1);
+            background-color: #EF4444;
+        }
+
+        100% {
+            transform: scale(1);
+            background-color: #EF4444;
+        }
+    }
+}
+
+
+@tailwind components;
+@tailwind utilities;
