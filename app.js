@@ -10,15 +10,7 @@ const {
     default: axios
 } = require("axios");
 const expressLayouts = require('express-ejs-layouts');
-/**
- * Express EJS layouts are only used when you want 
- * to be displaying different pages on a base layout.
- * The layout never changes, only the EJS variables 
- * in the layout do. This is good for web apps with logins
- * and stuff/multiple pages, since you can just 
- * set the body variable to a different view when
- * that page is requested.
- */
+
 app.use(expressLayouts)
 //don't use this unless you want to use a layout.ejs 
 //(useless for a single static page)

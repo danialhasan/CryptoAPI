@@ -9,7 +9,9 @@ function redirect() {
         document.querySelector('body').removeAttribute('onload');
     }
 }
-
+/**
+ * TEST CODE
+ */
 function roundPrice(price, place) {
     /**
      * This function rounds the price of the response to 2 decimal places,
