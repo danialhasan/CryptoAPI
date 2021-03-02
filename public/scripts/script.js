@@ -102,7 +102,7 @@ function runAPI(id) {
         })
         .then(res => {
             cryptoInfoObject = res.data[Object.keys(res.data)[0]];
-            console.log(cryptoInfoObject);
+            console.log(`Response:${cryptoInfoObject}`);
             // returns first index of the data object,
             // which contains the crypto info we need.
 
@@ -158,14 +158,18 @@ function runAPI(id) {
                 templateClone.children[0].children[0].children[0].textContent = cryptoName
                 //set price of crypto
                 templateClone.children[0].children[1].textContent = `$${cryptoPrice}`
-                //set crypto rate of change
-                templateClone.children[0].children[0].children[1].textContent = roundPrice(cryptoRateOfChange, 3);
                 if (roundPrice(cryptoRateOfChange, 3) < 0) {
                     templateClone.children[0].children[0].children[1].classList.remove('bg-green-500');
                     templateClone.children[0].children[0].children[1].classList.add('bg-red-500');
+                    //set crypto rate of change
+                    templateClone.children[0].children[0].children[1].textContent = roundPrice(cryptoRateOfChange, 3);
+
                 } else {
                     templateClone.children[0].children[0].children[1].classList.remove('bg-red-500');
                     templateClone.children[0].children[0].children[1].classList.add('bg-green-500');
+                    //set crypto rate of change
+                    templateClone.children[0].children[0].children[1].textContent = `+${roundPrice(cryptoRateOfChange, 3)}`;
+
                 }
                 //set crypto rate of change icon color as green/red depending on if
                 //its increasing or decreasing.

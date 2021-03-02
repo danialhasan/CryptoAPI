@@ -15,9 +15,9 @@ const API_KEY = process.env.API_KEY;
 //changed line. To toggle between production mode
 //and sandbox mode, add/remove 'TEST_' from the beginning
 //of each value below. 
-var productionENV = TEST_ENV;
-var productionENV_MAP = TEST_ENV_MAP;
-var productionKey = TEST_API_KEY;
+var productionENV = ENV;
+var productionENV_MAP = ENV_MAP;
+var productionKey = API_KEY;
 router.use((req, res, next) => {
 
     res.setHeader("Access-Control-Allow-Origin", '*');
