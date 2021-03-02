@@ -3,9 +3,9 @@
 // } = require("axios");
 function redirect() {
     if (window.location.href != '/dashboard') {
-        window.location.href = '/dashboard';
         document.querySelector('body')[0].removeAttribute('onload');
         alert("test")
+        window.location.href = '/dashboard';
     } else {
         document.querySelector('body')[0].removeAttribute('onload');
         alert("TEST")
