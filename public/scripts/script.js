@@ -3,12 +3,10 @@
 // } = require("axios");
 function redirect() {
     if (window.location.href != '/dashboard') {
-        document.querySelector('body')[0].removeAttribute('onload');
-        alert("test")
+        document.querySelector('body').removeAttribute('onload');
         window.location.href = '/dashboard';
     } else {
-        document.querySelector('body')[0].removeAttribute('onload');
-        alert("TEST")
+        document.querySelector('body').removeAttribute('onload');
     }
 }
 
@@ -103,46 +101,11 @@ function runAPI(id) {
         .then(res => {
             cryptoInfoObject = res.data[Object.keys(res.data)[0]];
             console.log(`Response:${cryptoInfoObject}`);
-            // returns first index of the data object,
-            // which contains the crypto info we need.
 
-            /**
-             * using search function in cryptoPrice is not necessary 
-             * since we're not getting an array of currencies from which to
-             * search for the currency, instead we are getting the currency itself.
-             * therefore search is unnecessary.
-             * 
-             * We need to use the RunMapAPI function to get the map, 
-             * then use the map (from local storage) to find the ID of the 
-             * currency before we send the /api request. We will need to 
-             * alter the search function to parse the map array with the name
-             * of the currency we need, and return the CMC ID. We will then use 
-             * that as stated before to make the /api request. 
-             * 
-             * This is so we get the specific information pertaining to 
-             * that specific cryptocurrency and avoid huge packet sizes.
-             * 
-             * In theory this will technically be more request-expensive and wear down our request 
-             * limits for the day, but its better than requesting the "big array of all 
-             * currencies" data once, sorting through that for all currencies, then displaying those
-             * and repeating every 5 minutes. 
-             */
             cryptoPrice = roundPrice(cryptoInfoObject.quote.USD.price, 3);
             cryptoName = cryptoInfoObject.name;
             cryptoRateOfChange = cryptoInfoObject.quote.USD.percent_change_24h; //24h rateofchange
             console.log(`Rate of Change (last 24h): ${cryptoRateOfChange}`);
-            /**
-             * When you get a response, check the crytoOption. 
-             * If any IDs on the dom match `cryptoOption+Container`, don't clone
-             * the template node, just update the price of that ID'd node.
-             * 
-             * If no IDs on the dom match the cryptoOption, it means no nodes of it exist. 
-             * Clone the template node and give the clone an ID equal to the cryptoOption. 
-             * Fill the name part with the cryptoOption and then fill the price with the price 
-             * of the crypto. 
-             */
-
-            //clone template and give it an ID equal to  `${cryptoName}Container`
 
             checkIfElementExists = document.querySelector(`#${cryptoName}Container`);
 
