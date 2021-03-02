@@ -193,7 +193,6 @@ function runAPI(id) {
 
             //duplicate the template in the dashboard, and fill in the crypto option
             //and price value.
-
         })
         .catch(err => console.log(err))
 }
