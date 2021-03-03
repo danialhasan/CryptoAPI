@@ -9,7 +9,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "build": "npx tailwindcss-cli@latest build ./public/styles.css -o ./public/src/tailwind.css;",
+    "build": "npm i;npx tailwindcss-cli@latest build ./public/styles.css -o ./public/src/tailwind.css;",
     "dev": "nodemon app"
   },
   "keywords": [],

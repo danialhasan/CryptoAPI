@@ -10,7 +10,7 @@ function redirect() {
     }
 }
 /**
- * This code is on Github and it should be hosted on Zeet.co.
+ * This code is on Github and it should be hosted on Zeet.co.dropl
  */
 function roundPrice(price, place) {
     /**
