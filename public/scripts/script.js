@@ -10,7 +10,7 @@ function redirect() {
     }
 }
 /**
- * TEST CODE
+ * This code is on Github and it should be hosted on Zeet.co.
  */
 function roundPrice(price, place) {
     /**
