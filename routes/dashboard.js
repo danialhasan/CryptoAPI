@@ -53,11 +53,15 @@ router.get('/map', (req, res) => {
         .catch(err => res.send(err))
 })
 
-router.get('/api', (req, res) => {
+router.get('/runAPI', (req, res) => {
     cmcID = req._parsedOriginalUrl.query;
     console.log(req._parsedOriginalUrl.query);
-    cmcID = cmcID.split('=')[1];
-
+    try {
+        cmcID = cmcID.split('=')[1];
+    } catch {
+        console.log("cmcID.split didn't work for some reason.");
+        console.log(`cmcID: ${cmcID}`);
+    }
     /**
      * split the original string, 'id=[cryptocurrency]' into
      * an array of 2 elements and pick the latter one.

@@ -76,7 +76,6 @@ function runMapAPI(currencyName) {
             method: 'get',
             url: '/dashboard/map'
         }).then(response => {
-            console.log(response);
             localStorage.setItem('MAP_DATA', JSON.stringify(response.data));
             console.log("%c Cryptocurrency Map Data fetched and placed into local storage.",
                 'padding:15px; margin:0; width:100%; background-color:#28A745; color:white')
@@ -95,7 +94,7 @@ function runAPI(id) {
     // runMapAPI(cryptoOption);
     axios({
             method: 'get',
-            url: '/dashboard/api',
+            url: '/dashboard/runAPI',
             params: {
                 id: id
             }
@@ -159,5 +158,5 @@ function runAPI(id) {
             //duplicate the template in the dashboard, and fill in the crypto option
             //and price value.
         })
-        .catch(err => console.log(`ERROR: ${err}`))
+        .catch(err => console.error(`ERROR: ${err}`))
 }
