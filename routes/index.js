@@ -17,7 +17,8 @@ router.use((req, res, next) => {
 
 })
 router.get('/', (req, res) => {
-    console.log(process.env.API_KEY);
+    let date = new Date;
+    console.log(`${date}, ${process.env.API_KEY}`);
     res.render('index', {
         title: "CryptoAPI"
     })

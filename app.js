@@ -20,21 +20,21 @@ app.set('layout', '../views/layout')
 
 //routes 
 app.use(function (req, res, next) {
-    res.setHeader("Access-Control-Allow-Origin", '*');
+    res.setHeader("Access-Control-Allow-Origin", '*'); //ANCHOR 
+    /**
+     * This should be set to 'https://cryptoapi.xyz' for security. If that is done,
+     * you must also include 
+     * res.setHeader('Vary': 'Origin');
+     * 
+     * Setting the Access - Control - Allow - Origin to * lets anyone make 
+     * a connection to the server. Right now theres little to no risk 
+     * because noone knows about this, but it's good to point out. 
+     */
     res.setHeader("Access-Control-Allow-Headers",
         "Origin, X-Requested-With, Content-Type, Accept"
     );
     next()
 });
-/**
- * For now, I am going to seperate the project into the index (landing page),
- * login page, and the dashboard. 
- * 
- * Landing page: where you can get a link to sign in/log in
- * Login page: where you can sign up/log in with fb/google (external
- * authentication)
- * Dashboard: Where API is used and you can see crypto prices.  
- */
 
 // Routes
 app.use('/', require('./routes/index.js'));
