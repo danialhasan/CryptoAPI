@@ -9,7 +9,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "build": "npm i;npx tailwindcss-cli@latest build ./public/styles.css -o ./public/src/tailwind.css;",
+    "build": "print \"Build command run! There's nothing in the build command.\"",
+    "build:css":"npx tailwindcss-cli@latest build ./public/styles.css -o ./public/src/tailwind.css;",
     "dev": "nodemon app"
   },
   "keywords": [],
