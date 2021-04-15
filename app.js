@@ -37,11 +37,11 @@ app.use(function (req, res, next) {
 });
 
 // Routes
-app.use('/', require('./routes/index.js'));
-app.use('/dashboard', require('./routes/dashboard.js'));
-app.use('/users', require('./routes/users.js'));
+app.use('/', require('./routes/index'));
+app.use('/dashboard', require('./routes/dashboard'));
+app.use('/users', require('./routes/users'));
 
-app.use('/test', require('./routes/test.js'))
-app.use('*', require('./routes/404.js'))
+app.use('/test', require('./routes/test'))
+app.use('*', require('./routes/404'))
 
 app.listen(PORT, console.log(`Listening on port ${PORT}`))
