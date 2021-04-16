@@ -122,21 +122,22 @@ function runAPI(id) {
                 templateClone.children[0].children[0].children[0].textContent = cryptoName
                 //set price of crypto
                 templateClone.children[0].children[1].textContent = `$${cryptoPrice}`
-                if (roundPrice(cryptoRateOfChange, 3) < 0) {
+
+                //set crypto rate of change icon color as green/red depending on if its increasing or decreasing.
+                if (roundPrice(cryptoRateOfChange, 2) < 0) {
                     templateClone.children[0].children[0].children[1].classList.remove('bg-green-500');
                     templateClone.children[0].children[0].children[1].classList.add('bg-red-500');
                     //set crypto rate of change
-                    templateClone.children[0].children[0].children[1].textContent = roundPrice(cryptoRateOfChange, 3);
+                    templateClone.children[0].children[0].children[1].textContent = `${roundPrice(cryptoRateOfChange, 2)}%`;
 
                 } else {
                     templateClone.children[0].children[0].children[1].classList.remove('bg-red-500');
                     templateClone.children[0].children[0].children[1].classList.add('bg-green-500');
                     //set crypto rate of change
-                    templateClone.children[0].children[0].children[1].textContent = `+${roundPrice(cryptoRateOfChange, 3)}`;
+                    templateClone.children[0].children[0].children[1].textContent = `+${roundPrice(cryptoRateOfChange, 2)}%`;
 
                 }
-                //set crypto rate of change icon color as green/red depending on if
-                //its increasing or decreasing.
+
 
                 cryptoInfoContainer.appendChild(templateClone);
             }

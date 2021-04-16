@@ -1,64 +1,71 @@
-<!-- THIS IS THE CODE YOU JUST PUSHED -->
-<div class="text-center mx-auto pt-12">
-    <label for="selectCryptoElement" class="text-white">
-        Choose your crypto
-    </label>
-    <select name="selectCryptoElement" id="selectCrypto">
-        <option value="Bitcoin">Bitcoin</option>
-        <option value="Ethereum">Ethereum</option>
-        <option value="Dogecoin">Dogecoin</option>
-        <option value="Carboncoin">Carboncoin</option>
-        <!-- <option value="Litecoin Plus">Litecoin Plus</option> -->
-        <!-- NOTE: Coins with special characters (spaces) don't work yet.  -->
-    </select>
-</div>
-<div class="mx-auto text-center w-full h-auto flex flex-col">
-    <button onclick="runMapAPI()" class="mx-auto text-center px-12 py-4 mt-24 rounded-full bg-indigo-500 text-white">Run
-        API</button>
-</div>
-
-<template id="cryptoTemplate">
-    <div class="mx-auto md:mx-0 bg-gray-700 mb-4 flex flex-col w-60 h-32 text-white">
-        <div id="cryptoOptionElement" class="w-full h-1/2 text-2xl flex items-center justify-between px-4">
-            <div>
-                [Bitcoin]
-            </div>
-            <div class="w-16 h-8 flex justify-center items-center text-base bg-green-500">+2.1%</div>
+<div class="relative min-h-screen w-full">
+    <div class="w-auto h-auto">
+        <div class="text-center mx-auto pt-12">
+            <label for="selectCryptoElement" class="text-white">
+                Choose your crypto
+            </label>
+            <select name="selectCryptoElement" id="selectCrypto">
+                <option value="Bitcoin">Bitcoin</option>
+                <option value="Ethereum">Ethereum</option>
+                <option value="Dogecoin">Dogecoin</option>
+                <option value="Carboncoin">Carboncoin</option>
+                <!-- <option value="Litecoin Plus">Litecoin Plus</option> -->
+                <!-- NOTE: Coins with special characters (spaces) don't work yet.  -->
+            </select>
         </div>
-        <div id="cryptoValueElement" class="w-full h-1/2 text-4xl flex items-center justify-center">
-            [$46,690.09]
+        <div class="mx-auto text-center w-full h-auto flex flex-col">
+            <button onclick="runMapAPI()"
+                class="mx-auto text-center px-12 py-4 mt-24 rounded-full bg-indigo-500 text-white">Run
+                API</button>
+        </div>
+
+        <template id="cryptoTemplate">
+            <div class="mx-auto md:mx-0 bg-gray-700 mb-4 flex flex-col w-60 h-32 text-white">
+                <div id="cryptoOptionElement" class="w-full h-1/2 text-2xl flex items-center justify-between px-4">
+                    <div>
+                        [Bitcoin]
+                    </div>
+                    <div class="w-16 h-8 flex justify-center items-center text-base bg-green-500">+2.1%</div>
+                </div>
+                <div id="cryptoValueElement" class="w-full h-1/2 text-4xl flex items-center justify-center">
+                    [$46,690.09]
+                </div>
+            </div>
+        </template>
+
+        <div id="cryptoPrices"
+            class="mt-8 mb-12 md:px-4 mx-auto w-full max-w-screen-xl h-auto flex md:justify-evenly flex-wrap">
         </div>
     </div>
-</template>
-<div id="cryptoPrices"
-    class="mt-8 mb-12 md:px-4 mx-auto w-full max-w-screen-xl h-auto flex md:justify-evenly flex-wrap">
-</div>
-<div class="relative flex space-y-2 flex-col -bottom-full py-12 w-screen text-white h-auto place-content-center">
-    <p class="text-center">Created and maintained by <a target="_blank" href="http://github.com/danialhasan"
-            class="font-bold italic">Danial
-            Hasan.</a>
-    </p>
-    <p class="text-center">Found a bug? <a target="_blank" href="https://twitter.com/03dh752"
-            class="font-bold italic">Tweet @ me</a> or <a target="_blank"
-            href="https://github.com/danialhasan/CryptoAPI/pulls" class="font-bold italic">submit
-            a pull request.</a></p>
-    <div class="inline-flex mx-auto space-x-8 w-auto h-auto">
-        <div class="w-12 h-12 rounded-full">
-            <a target="_blank" href="https://twitter.com/03dh752">
-                <img src="./assets/icons/twitter-logo-01282021/Twitter social icons/Twitter social icons - circle/Twitter social icons - circle - blue.png"
-                    alt="TWITTER" srcset="">
-            </a>
-        </div>
-        <div class="w-12 h-12 rounded-full">
-            <a target="_blank" href="https://github.com/danialhasan">
-                <img src="./assets/icons/GitHub-Mark/PNG/GitHub-Mark-Light-64px.png" alt="GITHUB" srcset="">
-            </a>
-        </div>
-        <div class="w-12 h-12 rounded-full bg-white">
-            <a target="_blank" href="https://www.linkedin.com/in/danial-hasan-0bb166182/">
-                <img src="./assets/icons/LinkedIn-Logos/linkedin.png" alt="LINKEDIN" srcset="">
-            </a>
-        </div>
+    <!-- footer element -->
+    <div class="absolute bottom-0 flex space-y-2 flex-col py-12 w-screen text-white h-auto place-content-center">
+        <p class="text-center">Created and maintained by <a target="_blank" href="http://github.com/danialhasan"
+                class="font-bold italic">Danial
+                Hasan.</a>
+        </p>
+        <p class="text-center">Found a bug? <a target="_blank" href="https://twitter.com/03dh752"
+                class="font-bold italic">Tweet @ me</a> or <a target="_blank"
+                href="https://github.com/danialhasan/CryptoAPI/pulls" class="font-bold italic">submit
+                a pull request.</a>
+        </p>
+        <div class="inline-flex mx-auto space-x-8 w-auto h-auto">
+            <div class="w-12 h-12 rounded-full">
+                <a target="_blank" href="https://twitter.com/03dh752">
+                    <img src="./assets/icons/twitter-logo-01282021/Twitter social icons/Twitter social icons - circle/Twitter social icons - circle - blue.png"
+                        alt="TWITTER" srcset="">
+                </a>
+            </div>
+            <div class="w-12 h-12 rounded-full">
+                <a target="_blank" href="https://github.com/danialhasan">
+                    <img src="./assets/icons/GitHub-Mark/PNG/GitHub-Mark-Light-64px.png" alt="GITHUB" srcset="">
+                </a>
+            </div>
+            <div class="w-12 h-12 rounded-full bg-white">
+                <a target="_blank" href="https://www.linkedin.com/in/danial-hasan-0bb166182/">
+                    <img src="./assets/icons/LinkedIn-Logos/linkedin.png" alt="LINKEDIN" srcset="">
+                </a>
+            </div>
 
+        </div>
     </div>
 </div>
