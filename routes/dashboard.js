@@ -72,9 +72,9 @@ router.get('/runAPI', (req, res) => {
 
     console.log(`User requested: ${cmcID}`);
 
-    axios.get(TEST_ENV, {
+    axios.get(ENV, {
             headers: {
-                'X-CMC_PRO_API_KEY': TEST_API_KEY
+                'X-CMC_PRO_API_KEY': API_KEY
             },
             params: {
                 id: cmcID
